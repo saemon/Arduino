@@ -31,5 +31,7 @@
 *.out
 *.app
 
-#libraries folder
-libraries/
+#3rd party libraries
+libraries/Adafruit*
+libraries/Firmata*
+libraries/SD*
