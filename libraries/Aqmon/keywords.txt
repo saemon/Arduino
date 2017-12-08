@@ -1,0 +1,25 @@
+#######################################
+# Syntax Coloring Map For DigIO
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+AqmonCommons	KEYWORD1
+AqmonSipo595	KEYWORD1
+AqmonController	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+init KEYWORD2
+loop KEYWORD2
+
+write KEYWORD2
+debug KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+DEBUG		LITERAL1
