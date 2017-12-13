@@ -1,10 +1,10 @@
-#ifndef AQMON_LCD_H
-#define AQMON_LCD_H
+#ifndef AQM_LCD_H
+#define AQM_LCD_H
 
 #include <inttypes.h>
 #include "Print.h"
-#include "AqmonCommons.h"
-#include "AqmonSipo595.h"
+#include "AqmCommons.h"
+#include "AqmCommsMgr.h"
 
 
 // commands
@@ -45,22 +45,10 @@
 #define LCD_5x10DOTS 0x04
 #define LCD_5x8DOTS 0x00
 
-#define LCD_COMMANDWORD 0x0000
-#define LCD_DATAWORD 0x8000
-#define LCD_ENABLEUP 0x4000
-#define LCD_4BITMASK 0xFE00
-#define LCD_8BITMASK 0xFFE0
 
-class AqmonLCD : public Print {
+class AqmLCD : public Print {
   public:
-    void init(
-      byte lcdCols,  // no of columns supported by LCD
-      byte lcdRows, // no of rows supported by LCD
-      byte lcdMode, //4 ot 8 bit lcd data bus
-      byte lcdBusOffset, //bitmask for which 5 bits of sipo bus drive the LCD, must be contiguos and in LCD pin order
-      AqmonSipo595 *sipo
-    );
-
+    void init(AqmCommsMgr *commsMgr );
     void begin(uint8_t cols, uint8_t rows, uint8_t mode);
     void clear();
     void home();
@@ -102,7 +90,7 @@ class AqmonLCD : public Print {
     uint8_t _mode;
     uint8_t _row_offsets[4];
 
-    AqmonSipo595 *sipo;
+    AqmCommsMgr *comms;
 };
 
 

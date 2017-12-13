@@ -6,9 +6,8 @@
 # Datatypes (KEYWORD1)
 #######################################
 
-AqmonCommons	KEYWORD1
-AqmonSipo595	KEYWORD1
-AqmonController	KEYWORD1
+AqmCommons	KEYWORD1
+AqmController	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
