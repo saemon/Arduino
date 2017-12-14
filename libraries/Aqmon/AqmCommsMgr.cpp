@@ -29,7 +29,10 @@
       srclkP = srclk;
       pinMode(srclkP,OUTPUT);
       digitalWrite(srclkP,LOW);
-
+      for(short i=0;i<8;i++){
+          setAddr(i);
+          sendByte(0x00);
+      }
       lastOut = 0x00;
       lastAddr = 0x00;
     }
@@ -65,5 +68,5 @@
       delayMicroseconds(DELAY595);
       digitalWrite(rclkP,LOW);
       lastOut = data;
-      debug("Comms Write :"+String(data,HEX));      
+      debug("Comms Write :"+String(data,HEX));
     }

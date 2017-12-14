@@ -3,7 +3,5 @@
 #include "Arduino.h"
 
 #define DEBUG
-#define STEPDELAY 5000
 void debug(String s);
-void stepDelay();
 #endif

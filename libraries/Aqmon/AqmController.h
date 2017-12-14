@@ -5,7 +5,8 @@
 #include "AqmCommsMgr.h"
 #include "AqmLCD.h"
 
-#define ADDR_LCD  0x02
+#define ADDR_LCD  0x03
+#define ADDR_BRD  0x06
 
 
 class AqmController{

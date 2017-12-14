@@ -15,14 +15,25 @@ void AqmController::init(
   ){
   comms.init(ser,rclk,srclk,addr0,addr1,addr2);
   comms.setAddr(ADDR_LCD);
-  //lcd.init(&comms);
-  //lcd.begin(16,2,0x00);
-  //lcd.clear();
-  //lcd.write("Welcome");
+  lcd.init(&comms);
+  lcd.begin(16,2,0x00);
+  lcd.clear();
+  lcd.print("Welcome");
 
 }
 
 short AqmController::loop(){
-  delay(5000);
+  delay(1000);
+  comms.setAddr(ADDR_LCD);
+  lcd.clear();
+  lcd.print(millis());
+  //comms.setAddr(ADDR_BRD);
+  /*lcd.clear();
+  lcd.print("Time from start ");
+  lcd.setCursor(1,1);
+  lcd.print(millis());*/
+  //comms.setAddr(ADDR_BRD);
+  //comms.sendByte(0x11);
+
   return 1;
 }

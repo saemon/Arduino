@@ -6,9 +6,3 @@ void debug(String s){
     Serial.println(s);
   #endif
 }
-
-void stepDelay(){
-  #ifdef debug
-    delay(STEPDELAY);
-  #endif
-}

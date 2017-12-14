@@ -84,26 +84,18 @@ void AqmLCD::begin(uint8_t cols, uint8_t lines, uint8_t dotsize) {
   // finally, set # lines, font size, etc.
   debug("LCD begin() set display function");
   command(LCD_FUNCTIONSET | _displayfunction);
-  debug("Wait 1....................");
-  delay(5000);
 
   // turn the display on with no cursor or blinking default
   _displaycontrol = LCD_DISPLAYON | LCD_CURSOROFF | LCD_BLINKOFF;
   debug("LCD begin() set display control");
   display();
-  debug("Wait 2....................");
-  delay(5000);
   clear();
-
 
   // Initialize to default text direction (for romance languages)
   _displaymode = LCD_ENTRYLEFT | LCD_ENTRYSHIFTDECREMENT;
   // set the entry mode
   debug("LCD begin() set entry mode");
   command(LCD_ENTRYMODESET | _displaymode);
-  debug("Wait 3....................");
-  delay(5000);
-  write("A");
 }
 
 void AqmLCD::setRowOffsets(int row0, int row1, int row2, int row3)
